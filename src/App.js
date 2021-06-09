@@ -12,6 +12,13 @@ export const App = () => {
     'https://images.dog.ceo/breeds/dachshund/Dachshund_rabbit.jpg',
   )
 
+  const changeDogUrlAtRandom = () => {
+    fetch('https://dog.ceo/api/breeds/image/random').then(res => {
+      const result = res.json()
+      result.then(r => setDogUrl(r.message))
+    })
+  }
+
   return (
     <div>
       <header>Dog アプリ</header>
@@ -19,14 +26,7 @@ export const App = () => {
       <figure>
         <img src={dogUrl} alt="犬の画像" />
       </figure>
-      <button
-        type="button"
-        onClick={() =>
-          setDogUrl(
-            'https://images.dog.ceo/breeds/hound-english/n02089973_1132.jpg',
-          )
-        }
-      >
+      <button type="button" onClick={changeDogUrlAtRandom}>
         更新
       </button>
     </div>
