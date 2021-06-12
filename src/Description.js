@@ -19,12 +19,12 @@ export const Description = () => {
   }
 
   return (
-    <div className="site_description_container">
-      <p className="site_description">犬の画像を表示するサイトです。</p>
+    <div className="description">
+      <p className="description__text">犬の画像を表示するサイトです。</p>
       <DogImage url={dogUrl} />
       <button
-        className="button"
-        type="button"
+        className="description__button"
+        type="description__button"
         onClick={changeDogUrlAtRandom}
         disabled={isLoading}
       >

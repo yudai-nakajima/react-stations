@@ -1,8 +1,8 @@
-figure, header, h1 {
+figure, header, h1, p {
   margin: 0;
 }
 
-.container {
+.app {
   width: 100%;
 }
 
@@ -13,20 +13,20 @@ figure, header, h1 {
   padding: 10px 0;
 }
 
-.header_title {
+.header__title {
   width: 100%;
   text-align: center;
 }
 
-.site_description {
-  margin: auto;
-}
-
-.site_description_container {
+.description {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid #000;
+}
+
+.description__text {
+  margin: auto;
 }
 
 .image_container {
@@ -36,11 +36,11 @@ figure, header, h1 {
 
 .image {
   max-width: 100%;
-  height: 450px;
+  height: 350px;
   object-fit: contain;
 }
 
-.button {
+.description__button {
   /* 
     見本画像のボタンがmaterial designのbuttonっぽいので
     それを参考にCSSを構成
@@ -71,17 +71,28 @@ figure, header, h1 {
   color: #fff;
 }
 
-.button:disabled {
+.description__button:disabled {
   background-color: #cccccc;
   color: #666666;
 }
 
+.dog-list-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.dog-list-container__text {
+  margin: 0 20px;
+}
+
 @media screen and (max-width: 420px) {
-  .main {
+  .description {
     grid-template-columns: 1fr;
   }
 
-  .button {
+  .description__button {
     grid-column: 1;
   }
 }

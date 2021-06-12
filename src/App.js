@@ -4,6 +4,7 @@ import './App.css'
 
 import { Header } from './Header'
 import { Description } from './Description'
+import { DogListContainer } from './DogListContainer'
 
 /**
  *
@@ -11,9 +12,10 @@ import { Description } from './Description'
  */
 export const App = () => {
   return (
-    <div className="container">
+    <div className="app">
       <Header />
       <Description />
+      <DogListContainer />
     </div>
   )
 }
