@@ -21,7 +21,7 @@ export const Description = () => {
   return (
     <div className="site_description_container">
       <p className="site_description">犬の画像を表示するサイトです。</p>
-      <DogImage dogUrl={dogUrl} />
+      <DogImage url={dogUrl} />
       <button
         className="button"
         type="button"
