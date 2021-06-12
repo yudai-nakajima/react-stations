@@ -2,14 +2,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const DogImage = ({ dogUrl }) => {
+export const DogImage = ({ url }) => {
   return (
     <figure className="image_container">
-      <img className="image" src={dogUrl} alt="犬の画像" />
+      <img className="image" src={url} alt="犬の画像" />
     </figure>
   )
 }
 
 DogImage.propTypes = {
-  dogUrl: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 }
