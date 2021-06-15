@@ -2,46 +2,8 @@ figure, header, h1, p {
   margin: 0;
 }
 
-.app {
-  width: 100%;
-}
-
-.header {
-  width: 100%;
-  background-color: #f5f5f5;
-  margin-bottom: 20px;
-  padding: 10px 0;
-}
-
-.header__title {
-  width: 100%;
-  text-align: center;
-}
-
-.description {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid #000;
-}
-
-.description__text {
-  margin: auto;
-}
-
-.image_container {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.image {
-  max-width: 100%;
-  height: 350px;
-  object-fit: contain;
-}
-
-.description__button {
-  /* 
+.description__button, .dog-list-selector__button {
+    /* 
     見本画像のボタンがmaterial designのbuttonっぽいので
     それを参考にCSSを構成
     プロパティは以下サイトを参考に設定した
@@ -63,12 +25,42 @@ figure, header, h1, p {
   padding: 0 16px;
   margin: 4px;
   border-radius: 4px;
-
-  grid-column: 2;
   background-color: #2c7bff;
+  color: #fff;
+}
+
+.app {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.header__title {
+  width: 100%;
+  text-align: center;
+}
+
+.description {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+}
+
+.description__text {
+  margin: auto;
+}
+
+.description__button {
+  grid-column: 2;
   margin: 10px;
   margin-left: auto;
-  color: #fff;
 }
 
 .description__button:disabled {
@@ -76,23 +68,68 @@ figure, header, h1, p {
   color: #666666;
 }
 
-.dog-list-container {
+.dog-image {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.dog-image__image {
+  max-width: 100%;
+  height: 350px;
+  object-fit: contain;
+}
+
+.dog-list-selector {
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
   margin: 10px 0;
+  border-top: 1px solid #000;
 }
 
-.dog-list-container__text {
+.dog-list-selector__text {
   margin: 0 20px;
 }
 
-@media screen and (max-width: 420px) {
+.dog-list-selector__button {
+  margin-left: 20px;
+}
+
+.dog-list-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dog-list-content__item {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1200px) {
+  .dog-list-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .dog-list-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
   .description {
     grid-template-columns: 1fr;
   }
 
   .description__button {
     grid-column: 1;
+  }
+
+  .dog-list-content {
+    grid-template-columns: 1fr;
   }
 }
