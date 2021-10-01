@@ -12,6 +12,7 @@ export const DogListContainer = () => {
     fetch('https://dog.ceo/api/breeds/list/all')
       .then(res => res.json())
       .then(result => setBreeds(Object.keys(result.message)))
+      .catch(() => alert('通信エラーが発生しました'))
   }, [])
 
   const onChangedSelect = e => {
@@ -25,6 +26,7 @@ export const DogListContainer = () => {
       fetch(`https://dog.ceo/api/breed/${selectedBreed}/images/random/12`)
         .then(res => res.json())
         .then(result => setDogImageUrls(result.message))
+        .catch(() => alert('通信エラーが発生しました'))
     }
   }
 
